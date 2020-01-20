@@ -1,11 +1,15 @@
-/*https://codepen.io/perry_nt/pen/eVboze*/
+/*
+edited from
+https://codepen.io/perry_nt/pen/eVboze
+*/
+
 /* ~~~~~~~ INIT. anim-btn ~~~~~~~ */
 
 .anim-btn {
     position: relative;
     padding: 1.4rem 4.2rem;
     padding-right: 3.1rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--inv);
     letter-spacing: 0.8rem;
     text-transform: uppercase;
@@ -167,6 +171,32 @@
     height: 100%;
 }
 
+/* ~~~~~~~~~~~~ BTN EDITS ~~~~~~~~~~~~ */
+
+.anim-btn.anim-smaller {
+    letter-spacing: 0.1rem;
+    font-size: 0.9rem;
+    padding: 1rem 1rem;
+    padding-right: 0.9rem;
+}
+
+.anim-btn.active {
+    font-weight: bolder;
+    color: #8bc34a !important;
+    cursor: unset;
+    transition: none;
+    background: #252525;
+}
+
+.anim-btn.active:hover:before {
+    background: none;
+    border: none;
+}
+
+.anim-btn.active:hover:after {
+    background: none;
+    border: none;
+}
 
 /* ~~~~~~~~~~~~ GLOBAL SETTINGS ~~~~~~~~~~~~ */
 
@@ -177,20 +207,23 @@
 body {
     --def: #202020;
     --inv: #fff;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(-15deg, #080808 0%, #181818 100%);
+    background-image: linear-gradient(-90deg, #141414 0%, #080808 20%, #080808 80%, #141414 100%);
+}
+
+.sidenav li>a {
+    color: white;
 }
 
 .full-body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
     justify-content: center;
 }
 
 html {
-    /*font-size: 12px;*/
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -200,4 +233,16 @@ div {
 
 div:last-child {
     margin-bottom: 0;
+}
+
+.bold-serif {
+    font-family: 'Cinzel', serif;
+}
+
+.sub-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+h3 {
+    padding: 0px;
 }
