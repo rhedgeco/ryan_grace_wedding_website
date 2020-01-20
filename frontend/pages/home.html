@@ -9,19 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+Garamond|Montserrat&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="data/css/custom-buttons.css">
+    <link rel="stylesheet" href="../data/css/custom-buttons.css">
+    <link rel="stylesheet" href="../data/css/custom-styles.css">
 </head>
 <body class="center-align white-text">
 <!--Top Bar-->
-<p class="left-align" style="padding: 10px 0 0 40px;">JULY 25, 2020 <br>SCOTTS VALLEY, CALIFORNIA</p>
+<p class="left-align" style="padding: 0 0 0 20px;">JULY 25, 2020 <br>SCOTTS VALLEY, CALIFORNIA</p>
 <!--Logo-->
 <div>
-    <img src="data/images/logo3d.png" style="width: 350px; padding-top: 40px" alt="">
+    <img src="../data/images/logo3d.png" style="width: 200px; padding-top: 40px" alt="" class="img-fade-in">
     <h3 class="bold-serif">Welcome</h3>
 </div>
 <!--Navigation-->
 <div>
-    <a class="hide-on-med-and-up sidenav-trigger btn-floating btn-large grey darken-4" data-target="mobile-bar">
+    <a class="hide-on-med-and-up sidenav-trigger btn-floating btn-large grey darken-4"
+       data-target="mobile-bar"
+       style="padding: 0">
         <i class="material-icons white-text">menu</i>
     </a>
     <div class="hide-on-small-and-down">
@@ -32,7 +35,7 @@
         <a class="anim-btn anim-smaller anim-btn-from-top">RSVP</a>
     </div>
     <ul class="sidenav grey darken-4" id="mobile-bar">
-        <li><img src="data/images/logo3d.png" style="width: 150px; padding-top: 30px" alt=""></li>
+        <li><img src="../data/images/logo3d.png" style="width: 150px; padding-top: 30px" alt=""></li>
         <li><a class="anim-btn anim-btn-from-right">Welcome</a></li>
         <li><a class="anim-btn anim-btn-from-right">Schedule</a></li>
         <li><a class="anim-btn anim-btn-from-right">Gallery</a></li>
@@ -42,11 +45,16 @@
 </div>
 <!--Main Body-->
 <div>
-    
+    <h4>
+        <span class="sub-serif" style="font-size: 25px">For the wedding of</span><br>
+        <span class="light-green-text text-lighten-3">Grace Marie Perlman </span>
+        <span style="font-size: 25px">and</span><br>
+        <span class="pink-text text-lighten-4"> Ryan Michael Hedgecock</span>
+    </h4>
 </div>
 
-<script src="data/js/jquery-3.4.1.min.js"></script>
-<script src="data/js/materialize.min.js"></script>
+<script src="../data/js/jquery-3.4.1.min.js"></script>
+<script src="../data/js/materialize.min.js"></script>
 <script>M.AutoInit()</script>
 </body>
 </html>

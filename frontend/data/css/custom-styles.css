@@ -1,0 +1,13 @@
+.img-fade-in {
+    animation-duration: 2s;
+    animation-name: img-fade-in-frames;
+}
+
+@keyframes img-fade-in-frames {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100%;
+    }
+}
