@@ -227,10 +227,6 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
-div {
-    margin-bottom: 3rem;
-}
-
 div:last-child {
     margin-bottom: 0;
 }
