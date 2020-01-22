@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+Garamond|Montserrat&display=swap"
           rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css">
     <link rel="stylesheet" href="data/css/custom-buttons.css">
     <link rel="stylesheet" href="data/css/custom-styles.css">
 </head>
@@ -47,22 +48,13 @@
         <li><a class="anim-btn anim-btn-from-right" href="registry.html">Registry</a></li>
         <li><a class="anim-btn anim-btn-from-right" href="rsvp.html">RSVP</a></li>
     </ul>
-    <h3 class="bold-serif">
-        <a class="btn-floating waves-effect waves-green grey darken-4" onclick="photo_prev();">
-            <i class="material-icons">keyboard_arrow_left</i>
-        </a>
-        Gallery
-        <a class="btn-floating waves-effect waves-green grey darken-4" onclick="photo_next();">
-            <i class="material-icons">keyboard_arrow_right</i>
-        </a>
-    </h3>
+    <h3 class="bold-serif">Gallery</h3>
 </div>
 <!--Main Body-->
 <div>
-    <div class="carousel img-fade-in" id="gallery-carousel" style="height: 600px">
-        <a class="carousel-item">
-            <img src="data/images/gallery/images/0001%20Grace%20&%20Ryan%20(engagement).JPG" style="height: 100%; width: auto">
-        </a>
+    <div style="margin: 20px">
+        <span id="gallery-holder" style="display: flex; flex-wrap: wrap">
+        </span>
     </div>
 </div>
 

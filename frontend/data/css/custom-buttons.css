@@ -207,8 +207,7 @@ https://codepen.io/perry_nt/pen/eVboze
 body {
     --def: #202020;
     --inv: #fff;
-    height: 100vh;
-    background-image: linear-gradient(-45deg, #141414 0%, #202020 100%);
+    background-image: linear-gradient(-90deg, #141414 0%, #202020 100%);
 }
 
 .sidenav li>a {
