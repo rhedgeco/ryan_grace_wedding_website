@@ -1,4 +1,3 @@
-M.AutoInit();
 const gHolder = document.getElementById("gallery-holder");
 const imageCount = 305;
 
