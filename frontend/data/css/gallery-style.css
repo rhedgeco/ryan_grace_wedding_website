@@ -23,12 +23,6 @@
   max-height: 100%;
   margin: auto;
 }
-.byebye {
-  opacity: 0;
-}
-.byebye:hover {
-  transform: scale(0.2) !important;
-}
 .gallery {
   display: grid;
   grid-column-gap: 8px;
