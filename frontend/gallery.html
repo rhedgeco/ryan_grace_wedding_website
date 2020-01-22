@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+Garamond|Montserrat&display=swap"
           rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css">
     <link rel="stylesheet" href="data/css/custom-buttons.css">
     <link rel="stylesheet" href="data/css/custom-styles.css">
+    <link rel="stylesheet" href="data/css/gallery-style.css">
 </head>
 <body class="center-align white-text">
 <!--Top Bar-->
@@ -53,9 +53,13 @@
 <!--Main Body-->
 <div>
     <div style="margin: 20px">
-        <span id="gallery-holder" style="display: flex; flex-wrap: wrap">
-            <a href="data/images/gallery/images/001rgengage.jpg" class="progressive replace"></a>
-        </span>
+        <div class="gallery" id="gallery">
+            <div class="gallery-item">
+                <div class="content">
+                    <img src="data/images/gallery/images/full/001rgengage.jpg">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
