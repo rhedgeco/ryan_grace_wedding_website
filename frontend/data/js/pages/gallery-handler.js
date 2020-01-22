@@ -4,7 +4,7 @@ function left_pad(string) {
 }
 
 function populate_gallery(_callback) {
-    let imageCount = 50;
+    let imageCount = 100;
     let req = new XMLHttpRequest();
     req.open('GET','data/images/gallery/html/image.html');
     req.onload = function () {
