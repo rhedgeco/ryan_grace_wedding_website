@@ -34,8 +34,7 @@ function control_gallery() {
         var altura = getVal(gallery, 'grid-auto-rows');
         var gap = getVal(gallery, 'grid-row-gap');
         gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-            var el = item;
-            el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
+            item.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
         });
     };
     gallery.querySelectorAll('img').forEach(function (item) {
@@ -58,6 +57,7 @@ function control_gallery() {
             item.classList.toggle('full');
         });
     });
+    resizeAll();
 }
 
 populate_gallery(control_gallery);
