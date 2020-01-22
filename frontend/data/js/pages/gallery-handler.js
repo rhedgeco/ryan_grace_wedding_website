@@ -1,3 +1,5 @@
+M.AutoInit();
+
 function left_pad(string) {
     let zeroes = "000";
     return zeroes.substring(0, zeroes.length - string.length) + string;
