@@ -15,7 +15,13 @@
     background-color: rgba(0, 0, 0, 0.75) !important;
     height: 100%;
     width: 100%;
-    display: grid;
+    display: flex;
+    justify-content: center;
+}
+
+.full .content .content-wrapper {
+    width: fit-content;
+    align-self: center;
 }
 
 .full .content img {
@@ -24,7 +30,6 @@
     animation: zoomin 1s ease;
     max-width: 100%;
     max-height: 100%;
-    margin: auto;
 }
 
 .gallery {
@@ -36,30 +41,31 @@
 }
 
 .gallery img {
-    max-width: 100%;
     box-shadow: 0 0 16px #111;
-    transition: all 1.5s ease;
-    width: 800px;
-    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 0;
 }
 
 .gallery img:hover {
     box-shadow: 0 0 32px #333;
 }
 
-.gallery .content {
-    padding: 4px;
-}
-
 .gallery .gallery-item {
     transition: all 0.5s ease;
     cursor: pointer;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 20px;
+}
+
+.gallery .gallery-item:not(.full) {
+    height: min-content;
+    padding-bottom: 0;
 }
 
 .gallery .gallery-item:hover {
     transform: scale(1.025);
+    box-shadow: 0 0 32px #333;
 }
 
 @media (max-width: 600px) {
@@ -76,7 +82,7 @@
 
 @-moz-keyframes zoomin {
     0% {
-        max-width: 50%;
+        max-width: 98%;
         filter: blur(4px);
     }
     100% {
@@ -86,7 +92,7 @@
 
 @-webkit-keyframes zoomin {
     0% {
-        max-width: 50%;
+        max-width: 98%;
         filter: blur(4px);
     }
     100% {
@@ -96,7 +102,7 @@
 
 @-o-keyframes zoomin {
     0% {
-        max-width: 50%;
+        max-width: 98%;
         filter: blur(4px);
     }
     100% {
@@ -106,7 +112,7 @@
 
 @keyframes zoomin {
     0% {
-        max-width: 50%;
+        max-width: 98%;
         filter: blur(4px);
     }
     100% {
