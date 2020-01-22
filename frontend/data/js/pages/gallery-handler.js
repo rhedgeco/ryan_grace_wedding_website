@@ -1,5 +1,5 @@
 const gHolder = document.getElementById("gallery-holder");
-const imageCount = 305;
+const imageCount = 100;
 
 function progressive_replace() {
     // progressive-image.js
