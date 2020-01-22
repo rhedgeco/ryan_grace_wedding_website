@@ -6,17 +6,17 @@ function left_pad(string) {
 }
 
 function populate_gallery(_callback) {
-    let imageCount = 100;
+    let imageCount = 50;
     let req = new XMLHttpRequest();
-    req.open('GET','data/images/gallery/html/image.html');
+    req.open('GET', 'data/images/gallery/html/image.html');
     req.onload = function () {
         let gallery = document.getElementById('gallery');
         gallery.innerHTML = "";
-        for (let i = 1; i <= imageCount; i++)
-        {
+        for (let i = 1; i <= imageCount; i++) {
+            let pad = left_pad('' + i);
             gallery.innerHTML += req.responseText.replace(
-                '[full-img]',
-                'data/images/gallery/images/full/'+left_pad(''+i)+'rgengage.jpg'
+                '[img]',
+                'data/images/gallery/images/full/' + pad + 'rgengage.jpg'
             );
         }
         _callback();
