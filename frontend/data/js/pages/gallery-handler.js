@@ -128,7 +128,7 @@ function progressive_replace() {
 }
 
 function pad_zeroes(string) {
-    let zeroes = '0000';
+    let zeroes = '000';
     return zeroes.substring(0, zeroes.length - string.length) + string;
 }
 
@@ -138,7 +138,7 @@ function load_images() {
     client.onload = function () {
         for (let i = 1; i <= imageCount; i++) {
             gHolder.innerHTML += client.responseText
-                .replace('[full-img]', 'data/images/gallery/images/' + pad_zeroes('' + i) + ' Grace & Ryan (engagement).JPG');
+                .replace('[full-img]', 'data/images/gallery/images/' + pad_zeroes('' + i) + 'rgengage.jpg');
         }
         progressive_replace();
     };
