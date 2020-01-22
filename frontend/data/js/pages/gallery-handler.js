@@ -60,4 +60,4 @@ function control_gallery() {
     });
 }
 
-populate_gallery(control_gallery);
+control_gallery();
