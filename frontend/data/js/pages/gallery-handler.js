@@ -5,6 +5,17 @@ function left_pad(string) {
     return zeroes.substring(0, zeroes.length - string.length) + string;
 }
 
+function get_gallery_html(_callback) {
+    let req = new XMLHttpRequest();
+    req.open('GET', 'api/gallery_html_images?imageCount=350');
+    req.onload = function () {
+        let gallery = document.getElementById('gallery');
+        gallery.innerHTML = req.responseText;
+        _callback();
+    };
+    req.send();
+}
+
 function populate_gallery(_callback) {
     let imageCount = 50;
     let req = new XMLHttpRequest();
@@ -33,4 +44,4 @@ function control_gallery() {
     });
 }
 
-populate_gallery(control_gallery);
+get_gallery_html(control_gallery);
