@@ -10,7 +10,7 @@ body {
     background-image: linear-gradient(-90deg, #141414 0%, #171717 20%, #171717 80%, #141414 100%);
 }
 
-.sidenav li>a {
+.sidenav li > a {
     color: white;
 }
 
@@ -46,6 +46,12 @@ div:last-child {
 .img-fade-in {
     animation-duration: 1s;
     animation-name: img-fade-in-frames;
+}
+
+.top-right-lock {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
 }
 
 @keyframes img-fade-in-frames {
