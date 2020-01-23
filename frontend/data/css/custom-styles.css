@@ -54,6 +54,12 @@ div:last-child {
     top: 1rem;
 }
 
+.top-left-lock {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
 @keyframes img-fade-in-frames {
     from {
         opacity: 0;

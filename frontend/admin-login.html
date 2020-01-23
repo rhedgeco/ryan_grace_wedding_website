@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <title>Enter</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Cinzel|Cormorant+Garamond|Montserrat&display=swap"
           rel="stylesheet">
@@ -13,9 +14,12 @@
     <link rel="stylesheet" href="data/css/custom-styles.css">
 </head>
 <body class="center-align full-body">
-
-<img src="data/images/logo3d.png" style="width: 200px" alt="" class="img-fade-in">
-<div class="section">
+<a href="home.html" class="btn-flat waves-effect waves-light grey-text darken-2 top-left-lock">
+    <i class="material-icons left">keyboard_arrow_left</i>Back Home
+</a>
+<div style="margin: 2rem;">
+    <img src="data/images/logo3d.png" style="width: 200px" alt="" class="img-fade-in">
+    <h5 class="sans-serif white-text">Admin Login</h5>
     <form onsubmit="return false;">
         <div class="section">
             <input id="admin_id" type="text" class="validate" required>
@@ -24,7 +28,9 @@
             <label for="password">Password</label>
         </div>
         <button class="btn light-green lighten-1 waves-light waves-effect" type="submit">Login</button>
-        <a class="btn-flat pink-text text-lighten-3 waves-effect waves-light" style="font-size: 0.8rem">Create Admin ID</a>
+        <a class="btn-flat pink-text text-lighten-3 waves-effect waves-light" style="font-size: 0.8rem">
+            Create Admin ID
+        </a>
     </form>
 </div>
 

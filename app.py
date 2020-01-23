@@ -11,4 +11,4 @@ app.add_route('gallery_html_images', gallery)
 gallery_info = GalleryInfo('frontend/data/images/gallery')
 app.add_route('gallery_info', gallery_info)
 
-app.launch_webserver()
+app.launch_webserver(port=6009)
