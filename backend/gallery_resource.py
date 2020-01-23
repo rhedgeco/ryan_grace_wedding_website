@@ -15,16 +15,19 @@ class GalleryHtmlImages:
             print(f'warning {self.path} does not exist')
 
     def on_get(self, req, resp):
-        if not validate_params(req.params, 'imageCount'):
+        if not validate_params(req.params, 'images_per_page', 'page_number'):
             resp.status = falcon.HTTP_BAD_REQUEST
             resp.body = 'Bad Parameters.'
             return
 
-        image_count = int(req.params['imageCount'])
+        images_per_page = int(req.params['images_per_page'])
+        page_number = int(req.params['page_number'])
 
-        image_path = self.path / 'images/tiny'
+        image_path = self.path / 'images/full'
         images = [f for f in sorted(listdir(image_path)) if isfile(join(image_path, f))]  # gets files in a directory
-        images = images[:image_count]  # prune list to size
+        index_start = max(0, min(images_per_page * (page_number - 1), len(images)))
+        index_end = max(0, min(images_per_page * page_number, len(images)))
+        images = images[index_start:index_end]  # prune list to size
 
         html_path = self.path / 'html/image.html'
         image_html = ''

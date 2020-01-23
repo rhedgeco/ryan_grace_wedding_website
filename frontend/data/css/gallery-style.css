@@ -74,6 +74,10 @@
     box-shadow: 0 0 32px #333;
 }
 
+.page-num {
+    font-size: 1.8rem;
+}
+
 @media (max-width: 600px) {
     .gallery {
         grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));

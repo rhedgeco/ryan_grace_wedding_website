@@ -1,36 +1,42 @@
 M.AutoInit();
 
-function left_pad(string) {
-    let zeroes = "000";
-    return zeroes.substring(0, zeroes.length - string.length) + string;
-}
+let current_page = 1;
+let max_pages = 1;
 
-function get_gallery_html(_callback) {
+function refresh_page_num() {
     let req = new XMLHttpRequest();
-    req.open('GET', 'api/gallery_html_images?imageCount=350');
+    req.open('GET', 'api/gallery_info');
     req.onload = function () {
-        let gallery = document.getElementById('gallery');
-        gallery.innerHTML = req.responseText;
-        _callback();
+        try {
+            json = JSON.parse(req.responseText);
+            max_pages = json['page_count'];
+        } catch (e) {
+            max_pages = 1;
+            M.toast({html: '<span class="red-text">ERROR COMMUNICATING WITH GALLERY SERVER</span>'})
+        }
+        $('.page-num').each(function (i, obj) {
+            obj.innerText = '' + current_page + ' / ' + max_pages;
+        });
+        $('.prev-btn').each(function (i, obj) {
+            if(current_page === 1) {if(!obj.classList.contains('disabled')) {obj.classList.add('disabled')}}
+            else {obj.classList.remove('disabled')}
+        })
+        $('.next-btn').each(function (i, obj) {
+            if(current_page === max_pages) {if(!obj.classList.contains('disabled')) {obj.classList.add('disabled')}}
+            else {obj.classList.remove('disabled')}
+        })
     };
     req.send();
 }
 
-function populate_gallery(_callback) {
-    let imageCount = 50;
+function get_gallery_html(page, _callback) {
     let req = new XMLHttpRequest();
-    req.open('GET', 'data/images/gallery/html/image.html');
+    req.open('GET', 'api/gallery_html_images?images_per_page=10&page_number=' + page);
     req.onload = function () {
         let gallery = document.getElementById('gallery');
-        gallery.innerHTML = "";
-        for (let i = 1; i <= imageCount; i++) {
-            let pad = left_pad('' + i);
-            gallery.innerHTML += req.responseText.replace(
-                '[img]',
-                'data/images/gallery/images/full/' + pad + 'rgengage.jpg'
-            );
-        }
+        gallery.innerHTML = req.responseText;
         _callback();
+        refresh_page_num();
     };
     req.send();
 }
@@ -44,4 +50,18 @@ function control_gallery() {
     });
 }
 
-get_gallery_html(control_gallery);
+function next_page() {
+    if (current_page < max_pages) {
+        current_page++;
+        get_gallery_html(current_page, control_gallery);
+    }
+}
+
+function prev_page() {
+    if (current_page > 1) {
+        current_page--;
+        get_gallery_html(current_page, control_gallery);
+    }
+}
+
+get_gallery_html(current_page, control_gallery);
