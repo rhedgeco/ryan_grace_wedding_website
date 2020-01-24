@@ -43,7 +43,7 @@ class Auth:
 
     def _create_token(self, admin_id: str, password: str):
         user = self.db.get_admin(admin_id)
-        if not check_password(user['password_hash'], password):
+        if not check_password(user['password'], password):
             return None
         self.db.update_user_access(admin_id)
         cred = {

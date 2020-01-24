@@ -4,6 +4,7 @@ from general_falcon_webserver.backend.general_manager.databases import SqliteDat
 from general_falcon_webserver.backend.general_manager.app_constructor import WebApp
 
 from backend.admins import Admins
+from backend.authenticator import Auth
 from backend.gallery_info import GalleryInfo
 from backend.gallery_resource import GalleryHtmlImages
 
@@ -18,6 +19,9 @@ app.add_route('gallery_html_images', gallery)
 
 gallery_info = GalleryInfo('frontend/data/images/gallery')
 app.add_route('gallery_info', gallery_info)
+
+auth = Auth(db)
+app.add_route('auth', auth)
 
 admins = Admins(db)
 app.add_route('admins', admins)
