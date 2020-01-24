@@ -60,6 +60,11 @@ div:last-child {
     top: 1rem;
 }
 
+input {
+    color: #AAA;
+    text-align: center;
+}
+
 @keyframes img-fade-in-frames {
     from {
         opacity: 0;

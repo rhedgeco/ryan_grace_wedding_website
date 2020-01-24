@@ -17,9 +17,11 @@ class DatabaseManager:
     def get_admin(self, admin_id: str):
         return self.db.fetchone_query(f"SELECT * FROM admins WHERE admin_id='{admin_id}'")
 
-    def create_admin(self, email: str, admin_id: str, password: str):
-        self.db.send_query(f"INSERT INTO admins(email, admin_id, password) "
-                           f"VALUES ('{email})', '{admin_id}', '{password}')")
+    def create_admin(self, admin_id: str, password: str):
+        self.db.send_query(f"INSERT INTO admins(admin_id, password) "
+                           f"VALUES ('{admin_id}', '{password}')")
+        self.reset_admin_add_code(admin_id)
+        print(admin_id)
 
     def get_admin_from_add_code(self, add_code: str):
         return self.db.fetchone_query(f"SELECT * FROM admins WHERE add_code='{add_code}'")

@@ -34,26 +34,25 @@ class Admins:
         resp.body = user
 
     def on_post(self, req, resp):
-        if not validate_params(req.params, 'email', 'admin_id', 'password', 'add_code'):
+        if not validate_params(req.params, 'admin_id', 'password', 'add_code'):
             resp.status = falcon.HTTP_BAD_REQUEST
             resp.body = 'Bad parameters.'
             return
 
         admin_id = req.params['admin_id']
-        if self.db.get_admin(admin_id) != 'null':
+        if self.db.get_admin(admin_id):
             resp.status = falcon.HTTP_CONFLICT
             resp.body = 'Admin ID already exists.'
             return
 
         add_code = req.params['add_code']
         adding_admin = self.db.get_admin_from_add_code(add_code)
-        if adding_admin == 'null':
+        if not adding_admin:
             resp.status = falcon.HTTP_UNAUTHORIZED
             resp.body = 'Invalid add code.'
             return
 
         self.db.reset_admin_add_code(adding_admin['admin_id'])
 
-        email = req.params['email']
         password = hash_password(req.params['password'])
-        self.db.create_admin(email, admin_id, password)
+        self.db.create_admin(admin_id, password)
