@@ -39,6 +39,10 @@ div:last-child {
     font-family: 'Cormorant Garamond', serif;
 }
 
+.font-sub-color {
+    color: #BBB;
+}
+
 .sans-serif {
     font-family: 'Montserrat', sans-serif;
 }
