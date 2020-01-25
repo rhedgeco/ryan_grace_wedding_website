@@ -17,15 +17,19 @@
 <a href="home.html" class="btn-flat waves-effect waves-light grey-text darken-2 top-left-lock">
     <i class="material-icons left">keyboard_arrow_left</i>Back Home
 </a>
-<div style="margin: 2rem; max-width: 40rem">
+<div style="margin: 2rem;">
     <img src="data/images/logo3d.png" style="width: 200px" alt="" class="img-fade-in">
     <h5 class="sans-serif white-text">Admin Login</h5>
     <form onsubmit="login_admin();return false;">
         <div class="section">
-            <input id="admin_id" type="text" class="validate" required>
-            <label for="admin_id">Admin ID</label>
-            <input id="password" type="password" class="validate" required>
-            <label for="password">Password</label>
+            <div class="input-field">
+                <input id="admin_id" type="text" class="validate" required>
+                <label for="admin_id">Admin ID</label>
+            </div>
+            <div class="input-field">
+                <input id="password" type="password" class="validate" required>
+                <label for="password">Password</label>
+            </div>
         </div>
         <button class="btn light-green lighten-1 waves-light waves-effect" type="submit">Login</button>
         <a href="admin-register.html" class="btn-flat pink-text text-lighten-3 waves-effect waves-light"
