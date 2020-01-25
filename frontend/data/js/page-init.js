@@ -23,6 +23,12 @@ function getCookie(cname) {
     return "";
 }
 
+function getUrlParam(parameter, defaultvalue) {
+    let params = new URLSearchParams(window.location.search);
+    if (!params.has(parameter)) return defaultvalue;
+    return params.get(parameter);
+}
+
 function show_admin_items(admin_id) {
     $('.admin-visibility').each(function () {
         $(this).addClass('admin-show');
@@ -34,7 +40,9 @@ function detect_admin() {
     let req = new XMLHttpRequest();
     req.open('GET', 'api/admins?token=' + getCookie('token'));
     req.onload = function () {
-        if (req.status === 200) {show_admin_items(this.responseText);}
+        if (req.status === 200) {
+            show_admin_items(this.responseText);
+        }
     };
     req.send();
 }
