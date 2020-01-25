@@ -7,6 +7,7 @@
 body {
     --def: #202020;
     --inv: #fff;
+    --admin: none;
     background-image: linear-gradient(-90deg, #141414 0%, #171717 20%, #171717 80%, #141414 100%);
 }
 
@@ -62,6 +63,14 @@ div:last-child {
     position: absolute;
     left: 1rem;
     top: 1rem;
+}
+
+.admin-visibility {
+    display: var(--admin);
+}
+
+.admin-show {
+    --admin: inline-block;
 }
 
 input {

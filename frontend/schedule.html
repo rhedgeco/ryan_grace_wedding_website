@@ -14,7 +14,7 @@
 </head>
 <body class="center-align white-text">
 <!--Top Bar-->
-<a href="admin-login.html" class="btn-flat waves-effect waves-light grey-text darken-2 top-right-lock">
+<a href="admin-login.html" id="admin_login" class="btn-flat waves-effect waves-light grey-text darken-2 top-right-lock">
     Admin Login
 </a>
 <div class="hide-on-small-and-down">
@@ -58,6 +58,9 @@
         <div class="col s12 m5 l3 offset-l1">
             <div class="card grey darken-4 hoverable">
                 <div class="card-content white-text center-align">
+                    <a class="btn-flat waves-effect waves-light font-sub-color top-right-lock admin-visibility">
+                        <i class="material-icons left">edit</i>edit
+                    </a>
                     <span class="card-title sub-serif">Location</span>
                     <p class="sans-serif font-sub-color">
                         JULY 25, 2020<br><br>
@@ -77,6 +80,9 @@
         <div class="col s12 m7 l6">
             <div class="card grey darken-4 hoverable">
                 <div class="card-content white-text center-align">
+                    <a class="btn-flat waves-effect waves-light font-sub-color top-right-lock admin-visibility">
+                        <i class="material-icons left">edit</i>edit
+                    </a>
                     <span class="card-title sub-serif">Itinerary</span>
                     <p class="sans-serif font-sub-color">
                         (coming soon)<br><br>
@@ -99,6 +105,6 @@
 
 <script src="data/js/jquery-3.4.1.min.js"></script>
 <script src="data/js/materialize.min.js"></script>
-<script>M.AutoInit()</script>
+<script src="data/js/page-init.js"></script>
 </body>
 </html>
