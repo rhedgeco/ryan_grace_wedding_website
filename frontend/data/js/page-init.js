@@ -34,11 +34,7 @@ function detect_admin() {
     let req = new XMLHttpRequest();
     req.open('GET', 'api/admins?token=' + getCookie('token'));
     req.onload = function () {
-        if (req.status === 200) {
-            show_admin_items(this.responseText);
-        } else {
-            alert(req.responseText)
-        }
+        if (req.status === 200) {show_admin_items(this.responseText);}
     };
     req.send();
 }
