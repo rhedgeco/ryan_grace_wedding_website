@@ -28,10 +28,6 @@ html {
     font-family: 'Montserrat', sans-serif;
 }
 
-div:last-child {
-    margin-bottom: 0;
-}
-
 .bold-serif {
     font-family: 'Cinzel', serif;
 }
