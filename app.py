@@ -8,6 +8,7 @@ from backend.admins import Admins
 from backend.authenticator import Auth
 from backend.gallery_info import GalleryInfo
 from backend.gallery_resource import GalleryHtmlImages
+from backend.myregistry_scraper import MyRegistryScraper
 
 
 def parse_args():
@@ -35,6 +36,9 @@ def configure_app():
 
     admins = Admins(db)
     web_app.add_route('admins', admins)
+
+    registry = MyRegistryScraper()
+    web_app.add_route('myregistry_scraper', registry)
 
     return web_app
 
