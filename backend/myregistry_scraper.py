@@ -29,7 +29,6 @@ class MyRegistryScraper:
                 .replace('[gift-link]', item['link'])
 
         resp.body = registry_html
-        print(registry_html)
 
 
 def scrape_registry_page():
