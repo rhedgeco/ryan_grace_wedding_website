@@ -16,7 +16,7 @@ class MyRegistryScraper:
 
     def on_get(self, req, resp):
         item_path = self.path / 'registry_item.html'
-        json_dict = scrape_registry_page()  # testing scraping page for info
+        json_dict = scrape_registry_page_gifts()  # testing scraping page for info
         with open(item_path, 'r') as f:
             item_html = f.read()
 
@@ -30,8 +30,7 @@ class MyRegistryScraper:
 
         resp.body = registry_html
 
-
-def scrape_registry_page():
+def scrape_registry_page_gifts():
     MYREGISTRY_GIFT_LINK = f'https://www.myregistry.com/Visitors/Giftlist/PurchaseAssistant.aspx?registryId={MYREGISTRY_PAGE_ID}&giftId='
     page = requests.get(
         f'https://www.myregistry.com/ExternalApps/EmbededVistorView/v2/Visitors/GiftList.aspx?registryId={MYREGISTRY_PAGE_ID}&pageSize=10000')
@@ -51,4 +50,8 @@ def scrape_registry_page():
             })
     else:
         print('error lists are not same length')
+        print(f'gift_ids : {len(gift_ids)}')
+        print(f'gift_ids : {len(gift_titles)}')
+        print(f'gift_ids : {len(gift_prices)}')
+        print(f'gift_ids : {len(gift_images)}')
     return items
