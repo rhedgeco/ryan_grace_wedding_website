@@ -11,6 +11,7 @@
           rel="stylesheet">
     <link rel="stylesheet" href="data/css/custom-buttons.css">
     <link rel="stylesheet" href="data/css/custom-styles.css">
+    <link rel="stylesheet" href="data/css/registry-style.css">
 </head>
 <body class="center-align white-text">
 <!--Top Bar-->
@@ -54,9 +55,26 @@
 </div>
 <!--Main Body-->
 <div>
-    <p>EXPERIMENTAL TESTING</p>
-    <a class="btn waves-light waves-effect" onclick="alert_title();">Populate Titles</a>
-    <div id="registry-holder" class="row"></div>
+    <div class="font-sub-color" style="display: flex; align-items: center; justify-content: center;">
+        <p>Powered By</p>
+        <img src="data/images/mrlogo.png" style="height: 2rem; margin-left: 0.5rem;">
+    </div>
+    <p id="registry-message" class="font-sub-color">Populating Registry</p>
+    <div id="registry-preloader" class="preloader-wrapper small active">
+        <div class="spinner-layer spinner-green-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+    <div id="registry-holder" class="registry-holder">
+    </div>
 </div>
 
 <script src="data/js/jquery-3.4.1.min.js"></script>

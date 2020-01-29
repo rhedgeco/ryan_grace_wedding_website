@@ -26,6 +26,8 @@ class MyRegistryScraper:
                 .replace('[gift-title]', item['title'])\
                 .replace('[gift-price]', item['price'])\
                 .replace('[gift-image]', item['image'])\
+                .replace('[gift-desired]', item['desire'])\
+                .replace('[gift-purchased]', item['purchase'])\
                 .replace('[gift-link]', item['link'])
 
         resp.body = registry_html
@@ -39,6 +41,8 @@ def scrape_registry_page_gifts():
     gift_titles = tree.xpath('//tr[@class="itemGiftVisitorList"]/td/div[@class="gift-title"]/text()')
     gift_prices = tree.xpath('//tr[@class="itemGiftVisitorList"]/td/div[@class="gift-price"]/text()')
     gift_images = tree.xpath('//tr[@class="itemGiftVisitorList"]/td[@class="gift-image"]/img/@src')
+    gift_desire = tree.xpath('//tr[@class="itemGiftVisitorList"]/td/div/div[@class="desiredQty"]/text()')
+    gift_purcha = tree.xpath('//tr[@class="itemGiftVisitorList"]/td/div/div[@class="receivedQty"]/text()')
     items = {'gifts': [], 'cash_gifts': []}
     if len(gift_titles) == len(gift_prices) and len(gift_prices) == len(gift_images):
         for i in range(len(gift_titles)):
@@ -46,12 +50,16 @@ def scrape_registry_page_gifts():
                 'title': str(gift_titles[i]).replace('\r\n', '').replace('  ', ''),
                 'price': str(gift_prices[i]).replace('\r\n', '').replace('  ', ''),
                 'image': gift_images[i],
-                'link': MYREGISTRY_GIFT_LINK + gift_ids[i]
+                'link': MYREGISTRY_GIFT_LINK + gift_ids[i],
+                'desire': str(gift_desire[i]).replace('\r\n', '').replace('  ', ''),
+                'purchase': str(gift_purcha[i]).replace('\r\n', '').replace('  ', '')
             })
     else:
         print('error lists are not same length')
         print(f'gift_ids : {len(gift_ids)}')
-        print(f'gift_ids : {len(gift_titles)}')
-        print(f'gift_ids : {len(gift_prices)}')
-        print(f'gift_ids : {len(gift_images)}')
+        print(f'gift_titles : {len(gift_titles)}')
+        print(f'gift_prices : {len(gift_prices)}')
+        print(f'gift_images : {len(gift_images)}')
+        print(f'gift_desire : {len(gift_desire)}')
+        print(f'gift_purcha : {len(gift_purcha)}')
     return items
