@@ -1,6 +1,6 @@
 function populate_registry() {
     let req = new XMLHttpRequest();
-    req.open('GET', 'api/myregistry_scraper');
+    req.open('GET', 'api/myregistry');
     req.onload = function () {
         $('#registry-message').remove();
         $('#registry-preloader').remove();

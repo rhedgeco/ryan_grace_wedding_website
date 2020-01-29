@@ -38,7 +38,7 @@ def configure_app():
     web_app.add_route('admins', admins)
 
     registry = MyRegistryScraper('frontend/data/registry')
-    web_app.add_route('myregistry_scraper', registry)
+    web_app.add_route('myregistry', registry)
 
     return web_app
 
