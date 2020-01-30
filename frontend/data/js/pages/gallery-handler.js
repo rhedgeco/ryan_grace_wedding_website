@@ -62,14 +62,14 @@ function update_current_page() {
 function next_page() {
     if (current_page < max_pages) {
         current_page++;
-        window.location.href = '/gallery.html?page='+current_page;
+        window.location.href = '/gallery.html?page=' + current_page;
     }
 }
 
 function prev_page() {
     if (current_page > 1) {
         current_page--;
-        window.location.href = '/gallery.html?page='+current_page;
+        window.location.href = '/gallery.html?page=' + current_page;
     }
 }
 
@@ -90,4 +90,6 @@ function load_full_images() {
     })
 }
 
-refresh_page_num();
+$(document).ready(function () {
+    refresh_page_num();
+});

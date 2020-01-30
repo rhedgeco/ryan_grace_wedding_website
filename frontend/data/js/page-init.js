@@ -47,4 +47,6 @@ function detect_admin() {
     req.send();
 }
 
-detect_admin();
+$(document).ready(function () {
+    detect_admin();
+});
